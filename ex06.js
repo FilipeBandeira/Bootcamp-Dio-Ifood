@@ -25,7 +25,7 @@ function classificarImc(imc) {
 }
 main();*/
 
-(function () { //Função não nomeada, em grau de precedência que vai ser executada uma vez, mesmo que o main 
+(function () { //Função não nomeada, em grau de precedência que vai ser executada uma vez, mesmo coisa que o main - Forma mais organizada e otimizada para construir o código
     const imc = calcularImc(75, 1.81);
     console.log(classificarImc(imc));
 })();
