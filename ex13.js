@@ -1,20 +1,39 @@
-class Carro {
-    marca;
-    cor;
-    gastoMedioPorKm;
+class Pessoa {
+    nome;
+    peso;
+    altura;
 
-    constructor(marca, cor, gastoMedioPorKm) { //Função contrutor, passagens obrigatórias
-        this.marca = marca;
-        this.cor = cor;
-        this.gastoMedioPorKm = gastoMedioPorKm;
+    constructor(nome, peso, altura) {
+        this.nome = nome;
+        this.peso = peso;
+        this.altura = altura;
     }
 
-    calcularGastoDePercurso(distanciaEmKm, precoCombustivel) { //Método
-        return (distanciaEmKm * this.gastoMedioPorKm * precoCombustivel);
+    calcularImc() { // Método
+        return (this.peso / Math.pow(this.altura,2)); // Usa-se o this. para puxar o valor
+    }
+
+    classificarImc() { // Método
+        const imc = this.calcularImc(); 
+
+        if (imc < 18.5) {
+            return (`Seu IMC é de ${imc.toFixed(2)}, você está abaixo do peso`);
+        } else if (imc >= 18.5 && imc < 25) {
+            return (`Seu IMC é de ${imc.toFixed(2)}, você está com o peso normal`);
+        } else if (imc >= 25 && imc < 30) {
+            return (`Seu IMC é de ${imc.toFixed(2)}, você está acima do peso`);
+        } else if (imc >= 30 && imc < 40) {
+            return (`Seu IMC é de ${imc.toFixed(2)}, você esta obeso`);
+        } else if (imc >= 40) {
+            return (`Seu IMC é de ${imc.toFixed(2)}, você possui obesidade morbida`);
+        } else {
+            return (`Informe o seu peso e altura`);
+        }
     }
 }
 
-const uno = new Carro('Fiat', 'Azul', 1/12);
-console.log(uno);
+const jose = new Pessoa ('Jose', 80, 1.81);
+console.log(jose);
 
-console.log(uno.calcularGastoDePercurso(70,5))
+console.log(jose.calcularImc().toFixed(2)); // A constante jose que já recebeu a class pessoa, aciona o método.
+console.log(jose.classificarImc());

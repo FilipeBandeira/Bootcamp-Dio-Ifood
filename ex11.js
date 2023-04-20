@@ -1,5 +1,3 @@
-//Classe - definição do próprio objeto
-
 class Pessoa {
     nome;
     idade;
@@ -16,16 +14,20 @@ class Pessoa {
     }
 }
 
-const filipe = new Pessoa('Filipe', 31);
-//filipe.nome = 'Filipe Bandeira'; // Instância é uma ocorrência do objeto
-//filipe.idade = 31;
+function compararPessoas(p1, p2) {
+    if (p1.idade > p2.idade) {
+        console.log(`${p1.nome} é mais velho(a) que ${p2.nome}.`);
+    } else if (p2.nome > p1.nome) {
+        console.log(`${p2.nome} é mais velho(a) que ${p1.nome}.`);
+    } else {
+        console.log(`${p1.nome} e ${p2.nome} possuem a mesma idade.`);
+    }
+}
 
+const filipe = new Pessoa('Filipe', 30);
 const suelda = new Pessoa('Suelda', 52);
-//suelda.nome = 'Suelda Bandeira';
-//suelda.idade = 52;
 
-console.log(filipe);
-console.log(suelda);
+compararPessoas(filipe, suelda);
 
 filipe.descrever();
 suelda.descrever();

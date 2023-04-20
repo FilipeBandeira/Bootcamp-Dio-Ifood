@@ -1,33 +1,20 @@
-class Pessoa {
-    nome;
-    idade;
-    anoDeNascimento;
+class Carro {
+    marca;
+    cor;
+    gastoMedioPorKm;
 
-    constructor(nome, idade) {
-        this.nome = nome;
-        this.idade = idade;
-        this.anoDeNascimento = 2023 - idade;
+    constructor(marca, cor, gastoMedioPorKm) { //Função contrutor, passagens obrigatórias
+        this.marca = marca;
+        this.cor = cor;
+        this.gastoMedioPorKm = gastoMedioPorKm;
     }
 
-    descrever() { 
-        console.log(`Meu nome é ${this.nome} e minha idade é ${this.idade} anos, nasci no ano de ${this.anoDeNascimento}.`);
-    }
-}
-
-function compararPessoas(p1, p2) {
-    if (p1.idade > p2.idade) {
-        console.log(`${p1.nome} é mais velho(a) que ${p2.nome}.`);
-    } else if (p2.nome > p1.nome) {
-        console.log(`${p2.nome} é mais velho(a) que ${p1.nome}.`);
-    } else {
-        console.log(`${p1.nome} e ${p2.nome} possuem a mesma idade.`);
+    calcularGastoDePercurso(distanciaEmKm, precoCombustivel) { //Método
+        return (distanciaEmKm * this.gastoMedioPorKm * precoCombustivel);
     }
 }
 
-const filipe = new Pessoa('Filipe', 30);
-const suelda = new Pessoa('Suelda', 52);
+const uno = new Carro('Fiat', 'Azul', 1/12);
+console.log(uno);
 
-compararPessoas(filipe, suelda);
-
-filipe.descrever();
-suelda.descrever();
+console.log(uno.calcularGastoDePercurso(70,5))
