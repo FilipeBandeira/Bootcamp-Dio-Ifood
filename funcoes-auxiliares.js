@@ -1,6 +1,6 @@
 //Aqui está exportanto
 
-const entradas = [5, 50, 10, 98, 23];
+const entradas = [10, 7, 11, 6, 23, 9, 33, 55, 72, 25]; //O primeiro número quantifica o tamanho do array
 let i = 0;
 
 
