@@ -1,3 +1,5 @@
+//Revisão geral dos componentes do js usados no ts:
+
 // Variáveis:
 
 //1. Tipos primitivos: boolean, number, string
