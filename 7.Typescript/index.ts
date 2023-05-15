@@ -108,7 +108,7 @@ console.log(callToPhone("Filipe"));
  }
 
 
- // Interfaces (type x interface)
+ // Interfaces (type x interface):
  
 type robot = { // Mais utilizado quando for tipar, mais parecido com um objeto
     readonly id: number | string; 
@@ -139,8 +139,9 @@ console.log(bot);
 console.log(bot2);
 
 
-// Classe
+// Classe:
 
+//Ex1
 class Pessoa implements robot2 {
     id: string | number;
     name: string;
@@ -157,3 +158,40 @@ class Pessoa implements robot2 {
 
 const p = new Pessoa(1, "gutsman");
 console.log(p.sayHello());
+
+//Ex2
+
+// Com modificadores de acesso (data modifiers), que é quem poderá acessar a sua classe, pode usar do tipo public(pode acessar fora da class), private(só dentro da class), protected (calsses e sub classes)
+
+class character {
+    private name?: string; // O ? vem como item opcional
+    readonly stregth : number;
+    skill: number;
+
+    constructor (name: string, stregth: number, skill: number) {
+        this.name = name;
+        this.stregth = stregth;
+        this.skill = skill;
+    }
+
+    attack(): void { // Pode usar os modificadores nos métodos também
+        console.log(`Attack with ${this.stregth} points`);
+    }
+}
+
+const p1 = new character("Ryu", 10, 98);
+//p1.attack();
+p1.skill = 12;
+
+//Exemplo de subclasse:
+
+//character: superclass
+//magician: subclass
+
+class Magician extends character {
+    
+    constructor(name: string, stregth: number, skill: number) {
+        super(name, stregth, skill)
+    }
+}
+
