@@ -161,7 +161,7 @@ console.log(p.sayHello());
 
 //Ex2
 
-// Com modificadores de acesso (data modifiers), que é quem poderá acessar a sua classe, pode usar do tipo public(pode acessar fora da class), private(só dentro da class), protected (calsses e sub classes)
+// Com modificadores de acesso (data modifiers), é quem poderá acessar a sua classe, pode usar do tipo public(pode acessar fora da class), private(só dentro da class), protected (calsses e sub classes)
 
 class character {
     private name?: string; // O ? vem como item opcional
@@ -185,8 +185,8 @@ p1.skill = 12;
 
 //Exemplo de subclasse:
 
-//character: superclass
-//magician: subclass
+//character: superclass (pai)
+//magician: subclass (filho)
 
 class Magician extends character {
     
