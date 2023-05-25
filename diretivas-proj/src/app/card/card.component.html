@@ -1,6 +1,39 @@
 <h1>My app</h1>
-<p>card works!</p> <!--*ngif para mostrar ou não um componente-->
+
+<p *ngIf="true">card works!</p> <!--*ngif para mostrar ou não um componente-->
+
 <button>Olá Mundo</button>
+
 <ul>
-    <li *ngFor="let p of produtos"> {{ p }}</li>
-</ul>
+    <li *ngFor="let p of produtos; let i = index" (click) = "remover(i)"> 
+        {{ i }} - {{ p }}
+    </li> <!--Puxando a lista-->
+
+    <button (click)="adicionar()">Adicionar</button> <!--Aqui trabalhamos o conceito de reatividade, nesse caso adiconando no array, ou retirando com o pop, ou outros-->
+</ul> 
+
+<div [ngSwitch]="menuType">
+    <div *ngSwitchCase="'user'">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+        </ul>
+    </div>
+
+    <div *ngSwitchCase="'admin'">
+        <ul>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+    
+    <div *ngSwitchCase="'superuser'">
+        <ul>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+        </ul>
+    </div>
+</div>

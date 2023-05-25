@@ -7,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
   produtos: string[] = []
+  menuType: string = "superuser"
 
-  constructor() { 
+  constructor() { //Criando uma lista dinamicamente
     this.produtos = [
       "mouse",
       "teclado",
@@ -18,6 +19,14 @@ export class CardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  adicionar() {
+    this.produtos.push("Filipe")
+  }
+
+  remover(index: number) {
+    this.produtos.splice(index, 1)
   }
 
 }
